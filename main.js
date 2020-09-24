@@ -31,7 +31,7 @@ function likeCallback(e){
   //displays error message
   .catch(function(error) {
     modal.className = "error";
-    setTimeout(() => modal.className = "hidden", 5000);
+    setTimeout(() => modal.className = "hidden", 500);
     //grabbing the error message from the html file by id #modal (className property allows us to set a new class name )
   });
 }
