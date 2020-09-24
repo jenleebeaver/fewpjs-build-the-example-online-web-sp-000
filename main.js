@@ -59,7 +59,7 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
       } else {
         resolve("Pretend remote server notified of action!");
       }
-      // 1000 milisec = 1 sec 
+      // 1000 milisec = 1 sec
     }, 300);
   });
 }
