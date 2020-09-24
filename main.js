@@ -47,7 +47,7 @@ for (let glyph of articleHearts){
 
 //this is mimicServerCall to mimic server request and show that it randomly fails
 function mimicServerCall(url="http://mimicServer.example.com", config={}) {
-  let hideError = document.getElementById("hidden")
+  // let hideError = document.getElementById("hidden")
   //promise tells us if the server succeeds or fails asynchronously
   return new Promise(function(resolve, reject) {
     setTimeout(function() {
@@ -55,7 +55,7 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
       let isRandomFailure = Math.random() < .2
       if (isRandomFailure) {
         reject("Random server error. Try again.");
-        setTimeout()
+        // setTimeout()
       } else {
         resolve("Pretend remote server notified of action!");
         //hides module if we do not get an error
