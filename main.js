@@ -19,6 +19,7 @@ let colorStates = {
 function likeCallback(e){
   //grabbing the .like-glyph event listener (.like-glyph exists on empty heart image)
   let heart = e.target
+  let modal = document.getElementById("modal");
   //target event property returns element that triggered the event
   mimicServerCall("bogusURL")
   .then (function(serverMessage){
@@ -29,7 +30,7 @@ function likeCallback(e){
   })
   //displays error message
   .catch(function(error) {
-    document.getElementById("modal").className = "error"
+    modal.className = "error";
     //grabbing the error message from the html file by id #modal (className property allows us to set a new class name )
   });
 }
@@ -47,8 +48,6 @@ for (let glyph of articleHearts){
 
 //this is mimicServerCall to mimic server request and show that it randomly fails
 function mimicServerCall(url="http://mimicServer.example.com", config={}) {
-  let modal = document.getElementById("modal");
-  console.log(modal);
   //promise tells us if the server succeeds or fails asynchronously
   return new Promise(function(resolve, reject) {
     setTimeout(function() {
@@ -56,12 +55,9 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
       let isRandomFailure = Math.random() < .2
       if (isRandomFailure) {
         reject("Random server error. Try again.");
-        modal.classList.remove('hidden');
-        // setTimeout()
       } else {
         resolve("Pretend remote server notified of action!");
         //hides module if we do not get an error
-        // hideError;
       }
       //300 is giving is 300 msec. / 60 milliseconds = 5 seconds
     }, 300);
