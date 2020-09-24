@@ -58,7 +58,6 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
         reject("Random server error. Try again.");
       } else {
         resolve("Pretend remote server notified of action!");
-        //hides module if we do not get an error
       }
     }, 300);
   });
