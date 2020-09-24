@@ -62,6 +62,6 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
         // hideError;
       }
       //300 is giving is 300 msec. / 60 milliseconds = 5 seconds
-    }, 300, hideError);
+    }, 300);
   });
 }
