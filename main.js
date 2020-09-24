@@ -47,7 +47,7 @@ for (let glyph of articleHearts){
 
 //this is mimicServerCall to mimic server request and show that it randomly fails
 function mimicServerCall(url="http://mimicServer.example.com", config={}) {
-  // let hideError = document.getElementById("hidden")
+  let modal = document.getElementById("modal");
   //promise tells us if the server succeeds or fails asynchronously
   return new Promise(function(resolve, reject) {
     setTimeout(function() {
