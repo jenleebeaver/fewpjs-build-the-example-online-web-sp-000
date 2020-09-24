@@ -59,7 +59,7 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
       } else {
         resolve("Pretend remote server notified of action!");
         //hides module if we do not get an error
-        hideError;
+        // hideError;
       }
       //300 is giving is 300 msec. / 60 milliseconds = 5 seconds
     }, 300, hideError);
